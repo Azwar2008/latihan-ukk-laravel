@@ -18,7 +18,7 @@ Route::get('/', function () {
     return 'Selamat datang di Sistem E-PKL';
 });
 Route::get('/', function () {
- return 'Halaman Utama E-PKL';
+    return view('project.blade.php');
 });
 Route::get('/tentang', function () {
  return 'Halaman ini berisi informasi tentang modul E-PKL sekolah.';
@@ -42,3 +42,7 @@ Route::prefix('perusahaan')->name('perusahaan.')->group(function () {
 });
 Route::get('/perusahaan', [PerusahaanController::class, 'index'])->name('perusahaan.index');
 Route::get('/perusahaan/{id}', [PerusahaanController::class, 'show'])->name('perusahaan.show');
+Route::get('/', function () {
+    return view('welcome');
+});
+
